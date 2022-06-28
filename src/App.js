@@ -9,6 +9,7 @@ import {
   Route,
   Link,
 } from "react-router-dom";
+import Add_post from './components/Add_post';
 
 const App = ()=> {
   
@@ -19,7 +20,8 @@ const clicked = () =>{
     <div className="App">
       <BrowserRouter>
       <Routes>
-        <Route path="/" element={<> <Header/><Search/><List_card clicked={clicked}/> </>}/>
+        <Route path="/" element={<> <Header/><Search/><List_card/> </>}/>
+        <Route path="/add_post" element={<> <Header/> <Add_post/></>}/>
       </Routes>
     </BrowserRouter>
     </div>
