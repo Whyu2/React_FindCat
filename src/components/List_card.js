@@ -1,12 +1,30 @@
 
 import { useState,useEffect } from "react";
 import axios from "axios";
+import jwt_decode from "jwt-decode";
+import { useNavigate } from 'react-router-dom';
 const moment = require('moment');
 const List_card = () => {
 
+  const [nama,setNama] = useState ('');
+  const [token,setToken] = useState ('');
+
+  useEffect(()=>{
+    refreshToken();
+  }, [])
+  const refreshToken = async ()=>{
+    try {
+      const responeToken = await axios.get('http://localhost:2000/token');
+      setToken(responeToken.data.accessToken);
+      const decode = jwt_decode(responeToken.data.accessToken);
+    } catch (error) {
+ 
+    }
+  }
+
 const [Lists,setList] = useState([]);
 
- 
+
 const getLists = async ()=>{
   const respone = await axios.get('http://localhost:2000/posts');
   setList(respone.data);
@@ -16,11 +34,6 @@ useEffect(()=>{
   getLists();
 }, [])
 
-
-
-
-
-
   return (
     <div className='row'>
    { Lists.map((listku, index)=>(
@@ -28,13 +41,10 @@ useEffect(()=>{
  <div className='card card2'>
    <div className='card-body'>
      <p >{listku.nama}</p>
-
      <div className='row'>
        <div className='col-7 mt-3'>
        <i className="fas fa-map-marker-alt"></i>{
-
-        
-       } {listku.daerah}
+} {listku.daerah}
        </div>
        <div className='col-5 mt-3'>
        <p className='text-secondary'>

@@ -2,25 +2,25 @@
 import './App.css';
 import Header from './components/Header';
 import List_card from './components/List_card';
+import Login from './components/Login';
+import Register from './components/Register';
 import Search from './components/Search';
 import {
   BrowserRouter,
   Routes,
   Route,
-  Link,
 } from "react-router-dom";
 import Add_post from './components/Add_post';
 
 const App = ()=> {
   
-const clicked = () =>{
-  console.log("kepencet");
-}
   return (
     <div className="App">
       <BrowserRouter>
       <Routes>
-        <Route path="/" element={<> <Header/><Search/><List_card/> </>}/>
+      <Route path="/login" element={<><Login/></>}/>
+      <Route path="/register" element={<><Register/></>}/>
+        <Route path="/home" element={<> <Header/><Search/><List_card/> </>}/>
         <Route path="/add_post" element={<> <Header/> <Add_post/></>}/>
       </Routes>
     </BrowserRouter>
