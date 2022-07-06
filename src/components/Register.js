@@ -48,11 +48,11 @@ const Login = () => {
                 <h4 ><strong>Email</strong></h4>
         </div>
         <div className="flex-rev ">
-                <input type="text" placeholder="Masukkan Password" value={password} onChange= {(e) => setPassword(e.target.value) }/>
+                <input type="password" placeholder="Masukkan Password" value={password} onChange= {(e) => setPassword(e.target.value) }/>
                 <h4 ><strong>Password</strong></h4>
         </div>
         <div className="flex-rev ">
-                <input type="text" placeholder="Masukkan Konfirmasi Password" value={cnfrmpassword} onChange= {(e) => setCnfrmpassword(e.target.value) }/>
+                <input type="password" placeholder="Masukkan Konfirmasi Password" value={cnfrmpassword} onChange= {(e) => setCnfrmpassword(e.target.value) }/>
                 <p className="text-center text-danger">{msg}</p>
                 <h4 ><strong>Konfirmasi Password</strong></h4>
         </div>

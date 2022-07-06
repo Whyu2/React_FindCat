@@ -17,14 +17,13 @@ const Login = () => {
       await axios.post('http://localhost:2000/users/login',{
         email : email,
         password : password,
+    },{
+      withCredentials: true,
     });
     history('/home');
-  
     } catch (err) {
       if (err.response){
-        if (err.response){
         setMsg(err.response.data.msg);
-        }
       }
     }
 }

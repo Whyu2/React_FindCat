@@ -16,11 +16,12 @@ const App = ()=> {
   
   return (
     <div className="App">
+
       <BrowserRouter>
       <Routes>
       <Route path="/login" element={<><Login/></>}/>
       <Route path="/register" element={<><Register/></>}/>
-        <Route path="/home" element={<> <Header/><Search/><List_card/> </>}/>
+        <Route path="/home" element={<>   <Header/><List_card/> </>}/>
         <Route path="/add_post" element={<> <Header/> <Add_post/></>}/>
       </Routes>
     </BrowserRouter>

@@ -27,7 +27,7 @@ const savePost = async (e) =>{
             kelamin : kelamin,
             informasi : informasi
         });
-        history('/');
+        history('/home');
 }
 
   return (

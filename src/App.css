@@ -11846,7 +11846,7 @@ html,
 body {
     height: 100%;
     padding: 10px;
-    /* background-image: url("../img/bg.jpg"); */
+    background-image: url("../public/bg.jpg");
 
 }
 
